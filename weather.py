@@ -1,5 +1,5 @@
 import tkinter
-from tkinter import BOTH
+from tkinter import BOTH, IntVar
 root = tkinter.Tk()
 root.title('Weathe App')
 root.iconbitmap('weather.ico')
@@ -44,5 +44,16 @@ temp_max_label.pack()
 humidity_label.pack()
 photo_label.pack(pady=8)
 
+#input frame layout
+city_entry = tkinter.Entry(input_frame, width=20, font=large_font)
+submit_button = tkinter.Button(input_frame, text="Submit", bg=input_color, font=large_font)
+search_method = IntVar()
+search_method.set(1)
+search_city = tkinter.Radiobutton(input_frame, text="Submit Search City", variable=search_method, value=1, bg=input_color, font=small_font)
+search_zip = tkinter.Radiobutton(input_frame, text="Submit by Zip Code", variable=search_method, value=2, bg=input_color, font=small_font)
+city_entry.grid(row=0, column=0, padx=10, pady=(10, 0))
+submit_button.grid(row=0, column=1, padx=10, pady=(10, 0))
+search_city.grid(row=1, column=0, pady=2)
+search_zip.grid(row=1, column=1, pady=2)
 
 root.mainloop()
