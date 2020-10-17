@@ -70,6 +70,8 @@ def icon_image():
     # print(img)
     photo_label.config(image=img)
 
+
+
 #define layout
 sky_frame = tkinter.Frame(root, bg=sky_color, height=250)
 grass_frame = tkinter.Frame(root, bg=grass_color)
